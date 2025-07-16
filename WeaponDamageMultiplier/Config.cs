@@ -18,6 +18,9 @@ namespace HitboxWeaponDamageMultiplier
 		[Description("Enable debug logs.")]
 		public bool Debug { get; set; } = false;
 
+		[Description("Enables/Disables if a human should also give the SCPs more damage.")]
+		public bool DamageSCPs { get; set; } = false;
+
 		[Description("Default multipliers used if no weapon-specific multipliers are defined.")]
 		public Dictionary<string, float> DefaultMultipliers { get; set; } = new Dictionary<string, float>()
 		{

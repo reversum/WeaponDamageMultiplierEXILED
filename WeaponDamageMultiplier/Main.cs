@@ -11,7 +11,7 @@ namespace HitboxWeaponDamageMultiplier
 {
 	public class Main : Plugin<Config>
 	{
-		public override string Name => "HitboxWeaponDamageMultiplier";
+		public override string Name => "WeaponDamageMultiplier";
 		public override string Author => "YannikAufDie1";
 		public override PluginPriority Priority { get; } = PluginPriority.Last;
 		public override void OnEnabled()
@@ -29,6 +29,8 @@ namespace HitboxWeaponDamageMultiplier
 		private void OnHurting(HurtingEventArgs ev)
 		{
 			if (!ev.IsAllowed || ev.Attacker == null) return;
+
+			if (ev.Attacker.IsScp && !Config.DamageSCPs) return;
 
 			string weaponName = GetWeaponName(ev);
 
