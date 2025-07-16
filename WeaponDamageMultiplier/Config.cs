@@ -21,9 +21,9 @@ namespace HitboxWeaponDamageMultiplier
 		[Description("Default multipliers used if no weapon-specific multipliers are defined.")]
 		public Dictionary<string, float> DefaultMultipliers { get; set; } = new Dictionary<string, float>()
 		{
-			{ "headshot", 2.0f },
+			{ "headshot", 1.0f },
 			{ "body", 1.0f },
-			{ "limb", 0.8f },
+			{ "limb", 1.0f },
 		};
 
 		[Description("Weapon-specific damage multipliers per hitbox.")]
